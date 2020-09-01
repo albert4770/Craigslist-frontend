@@ -489,7 +489,6 @@ $('#all-posts').on('click', '#cancel-edit', function(event) {
     
     $(editButton).removeClass('disabled');
     $(deleteButton).removeClass('disabled');
-
     $('#edit-form').remove();
 });
 
