@@ -9,6 +9,7 @@ let state = {
 }
 
 const renderHeader = () => {
+    $('#search-bar').val('');
     if (state.isLogged) {
         $('#login, #signup').addClass('disabled'); 
         $('#create, #logout, #messages').removeClass('disabled'); 
@@ -40,9 +41,9 @@ const createPostElem = (post) => {
     return postElem;
 }
 
-const renderPosts = () => {
+const renderPosts = posts => {
     $('#all-posts').empty();
-    state.posts.forEach(post => {
+    posts.forEach(post => {
         // console.log(post);
         let postElem = createPostElem(post);
         $('#all-posts').prepend(postElem);
@@ -108,7 +109,7 @@ const fetchAllPosts = async () => {
         let obj = await response.json();
         state.posts = await obj.data.posts;
         // console.log(state.posts);
-        renderPosts();
+        renderPosts(state.posts);
     } catch (error) {
         console.log(error);
     }
@@ -321,6 +322,8 @@ $('#login-submit').click( event => {
             renderHeader();
             fetchAllPosts();
             fetchMessages();
+        } else {
+            alert('Wrong credentials!')
         }
     });
     $('#login-comp form').trigger('reset');
@@ -371,7 +374,7 @@ $('#create-submit').click( (event) => {
     createPost(post).then( obj => {
         if (obj.success) {
             state.posts.push(obj.data.post);
-            renderPosts();
+            renderPosts(state.posts);
         }
     });
 
@@ -490,6 +493,18 @@ $('#all-posts').on('click', '#cancel-edit', function(event) {
     $(editButton).removeClass('disabled');
     $(deleteButton).removeClass('disabled');
     $('#edit-form').remove();
+});
+
+$('#search-bar').on('input', () => {
+    let filterValue = $('#search-bar').val();
+
+    // console.log(filterValue);
+
+    let curatedPosts = state.posts.filter( post => {
+        return post.title.includes(filterValue) || post.description.includes(filterValue) || post.author.username.includes(filterValue) || post.location.includes(filterValue);
+    });
+
+    renderPosts(curatedPosts)
 });
 
 fetchAllPosts();
