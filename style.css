@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 900px auto;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 800px 1fr 1fr 1fr 1fr;
+    
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    border: 1px solid black;
+}
+
+header button {
+    width: 100px;
+    height: 30px;
+    place-self: center;
+}
+
+#search-bar {
+    width: 200px;
+    height: 30px;
+    place-self: center;
+}
+
+#logo {
+    max-height: 75px;
+    place-self: center;
+}
+
+#all-posts {
+    display: grid;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+
+    grid-template-columns: 1fr;
+    border: 1px solid black;
+}
+
+.post {
+    margin: 10px 10px 10px 10px;
+    border: 1px solid black;
+    padding: 5px
+}
+
+.post div, .post button {
+    padding: 5px;
+}
+
+#form-cont {
+    display: grid;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+
+    border: 1px solid black;
+    padding: 15px;
+
+    /* grid-template-rows: repeat(10, 35px); */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+
+    padding: 5px;
+}
+
+form input, form p, form button, form label {
+    margin: 5px
+}
+
+#message-comp {
+    justify-self: left;
+}
+
+#message {
+    border: 1px solid black;
+}
+
+.disabled {
+    display: none;
+}

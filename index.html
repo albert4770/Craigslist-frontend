@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+</html>
+<html lang="en">
+    <head>
+        <title>Stranger's Things</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script defer src="app.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <header>
+            <p>Craigslist</p>
+            <input type="text" placeholder="Search Posts" id="search-bar">
+            <button id="login">Log In</button>
+            <button id="signup">Sign Up</button>
+            <button id="create" class="disabled">Create Post</button>
+            <button id="messages" class="disabled">Messages</button>
+            <button id="logout" class="disabled">Log Out</button>
+        </header>
+
+        <div id="all-posts">
+            <!-- <div class='post'>
+                <div>Title: ${post.title}</div>
+                <div>User: ${post.author.username}</div>
+                <div>Description: ${post.description}</div>
+                <div>Price: ${post.price}</div>
+                <div>Location: ${post.location}</div>
+                <div>Delivery: ${post.willDeliver}</div>
+                <div>Last Update: ${post.updatedAt}</div>
+                <span><button>Comment</button></span>
+                <span><button>Delete</button></span>
+                <span><button>Edit</button></span>
+            </div> -->
+        </div>
+
+        <div id="form-cont">
+            <div id="signup-comp" class="disabled">
+                <form action="submit">
+                    <p>Use a strong password!</p>
+                    <label for="username"></label>
+                    <input type="text" name="username" id="username-su" placeholder="Username">
+                    <label for="password"></label>
+                    <input type="text" name="password" id="password-su" placeholder="Password">
+                    <button id="signup-submit">Submit</button>
+                </form>
+            </div>
+    
+            <div id="login-comp" class="disabled">
+                <form action="submit">
+                    <p>Please enter your credentials</p>
+                    <input type="text" name="username" id="username-li" placeholder="Username" required>
+                    <input type="text" name="password" id="password-li" placeholder="Password" required>
+                    <button id="login-submit">Submit</button>
+                </form>
+            </div>
+    
+            <div id="create-comp" class="disabled">
+                <form>
+                    <p>All fields Required!</p>
+                    <input type="text" name="" id="post-title" placeholder="Title" required>
+                    <input type="text" name="" id="post-desc" placeholder="Description" required>
+                    <input type="text" name="" id="post-price" placeholder="Price" required>
+                    <input type="text" name="" id="post-location" placeholder="Location">
+                    <input type="checkbox" name="delivery" id="post-delivery"><span><label for="delivery">Will Deliver?</label></span>
+                    <button id="create-submit">Create Post</button>
+                    <button type="submit" id="cancel-create">Cancel Post</button>
+                </form>
+            </div>
+
+            <!-- <div id="edit-comp" class="disabled">
+                <form id="edit-form">
+                    <p>Edit Post!</p>
+                    <input type="text" name="" id="edit-title" placeholder="Title" required>
+                    <input type="text" name="" id="edit-desc" placeholder="Description" required>
+                    <input type="text" name="" id="edit-price" placeholder="Price" required>
+                    <input type="text" name="" id="edit-location" placeholder="Location">
+                    <input type="checkbox" name="delivery" id="edit-delivery"><span><label for="delivery">Will Deliver?</label></span>
+                    <button id="edit-submit">Edit Post</button>
+                    <button type="submit" id="cancel-edit">Cancel Edit</button>
+                </form>
+            </div> -->
+    
+            
+
+            <div id="message-parent" class="disabled">
+                <div id="messages-list"></div>
+                <button id='hide-messages'>Close Messages</button>
+            </div>
+
+        </div>
+
+    </body>
+</html>
