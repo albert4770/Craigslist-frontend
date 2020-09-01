@@ -499,6 +499,7 @@ fetchAllPosts();
 //To-do
 //Search function
 //add cancel sign up/log in button
+// git test
 
 // Albert477033
 // wfj23r#4twejif
